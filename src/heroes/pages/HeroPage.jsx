@@ -1,6 +1,7 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom"
 import { getHeroesByID } from "../helpers/getHeroesByID";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
+import { useMemo } from "react";
 
 export const HeroPage = () => {
   // uso de custom hook de react router para trabajar facilmente con los parametros
@@ -9,7 +10,9 @@ export const HeroPage = () => {
   // aqui deberiamos ver el id del heroe {hero_id}
   // console.log(queryParams)
 
-  const hero = getHeroesByID(queryParams.hero_id);
+  // resultado de funcion memorizada para evitar que si un componente padre cambia
+  // entonces se evite volver a hacer una llamada a esta funcion
+  const hero =  useMemo( () => getHeroesByID(queryParams.hero_id), [queryParams.hero_id]);
 
   // si no hay un hero, redirige a /marvel
   if(!hero){
