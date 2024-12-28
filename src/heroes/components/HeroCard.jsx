@@ -17,7 +17,7 @@ export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance
       <section className="flex flex-col p-1 *:flex-1">
         <header>
           <h2 className={`font-bold ${publisher==='Marvel Comics' ? 'text-red-400' : 'text-sky-400'}`}>{publisher}</h2>
-          <p><small className="text-slate-400">Nombre:</small> <br /> {alter_ego}</p>
+          <p><small className="text-slate-400">Nombre:</small> <br /> <span className="font-semibold">{alter_ego}</span></p>
           <p><small className="text-slate-400">Primer aparición:</small> <br /> {first_appearance}</p>
         </header>
         <footer className="flex flex-col">
