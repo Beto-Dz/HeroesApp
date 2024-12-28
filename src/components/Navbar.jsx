@@ -1,7 +1,20 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { EllipsisHorizontalIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
 export const Navbar = () => {
+
+  // custom hook de react router para manejar la navegacion
+  const navigate = useNavigate();
+
+  // funcion de ayuda para cerrar sesion
+  const handleOnLogout = () => {
+    // primero indicamos la ruta a la cual vamos a navegar
+    // en segundo indicamos si se reemplaza el historial
+    navigate('/login', {
+      replace: true
+    })
+  }
+
   return (
     <nav className="w-full p-2 text-white flex justify-between items-center text-center bg-slate-800 font-bold">
       <Link to="/">Asociaciones</Link>
@@ -19,6 +32,16 @@ export const Navbar = () => {
               DC
             </NavLink>
           </li>
+          <li className="w-full h-fit">
+            <NavLink to="/search" className={({ isActive })=> `block w-full h-full p-1 rounded-lg ${isActive ? 'bg-slate-800' : ''}`}>
+              Buscar
+            </NavLink>
+          </li>
+          <li className="w-full h-fit">
+            <NavLink to="/hero" className={({ isActive })=> `block w-full h-full p-1 rounded-lg ${isActive ? 'bg-slate-800' : ''}`}>
+              Heroe
+            </NavLink>
+          </li>
         </ul>
       </button>
 
@@ -26,12 +49,13 @@ export const Navbar = () => {
         <EllipsisHorizontalIcon className="w-8 h-8" />
         <ul className="absolute right-full top-0 bg-slate-700 rounded-lg hidden group-hover/dots:block transition-all">
           <li className="p-3">
-            <NavLink className="" to="/login">
+            <button onClick={handleOnLogout}>
               Logout
-            </NavLink>
+            </button>
           </li>
         </ul>
       </button>
+
     </nav>
   );
 };

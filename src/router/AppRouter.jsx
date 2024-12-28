@@ -1,17 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import { LoginPage } from "../auth/LoginPage";
-import { DcPage } from "../heroes/pages/DcPage";
-import { MarvelPage } from "../heroes/pages/MarvelPage";
-import { Navbar } from "../components/Navbar";
+import { HeroesRoutes } from "../heroes/routes/HeroesRoutes";
 
+// router general de la app
 export const AppRouter = () => {
   return (
     <>
-      <Navbar />
       <Routes>
-        <Route path="marvel" element={<MarvelPage />} />
-        <Route path="dc" element={<DcPage />} />
         <Route path="login" element={<LoginPage />} />
+        {/* si tuviera mas rutas como register o recover password irian aqui */}
+        <Route path="/*" element={<HeroesRoutes />} />
       </Routes>
     </>
   );
