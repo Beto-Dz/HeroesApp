@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        'two-auto': 'auto 1fr',
+        'template-auto': 'repeat(auto-fit, minmax(350px, 1fr))'
+      },
+    },
   },
   plugins: [],
 }
