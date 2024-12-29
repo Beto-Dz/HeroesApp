@@ -6,15 +6,16 @@ import { AuthContext } from "../auth/context/AuthContext";
 export const Navbar = () => {
 
   // accediendo al contexto para obtener el nombre
-  const { user } = useContext(AuthContext)
+  const { user, handleLogout } = useContext(AuthContext)
 
   // custom hook de react router para manejar la navegacion
   const navigate = useNavigate();
 
   // funcion de ayuda para cerrar sesion
-  const handleOnLogout = () => {
+  const onLogout = () => {
     // primero indicamos la ruta a la cual vamos a navegar
     // en segundo indicamos si se reemplaza el historial
+    handleLogout()
     navigate('/login', {
       replace: true
     })
@@ -55,7 +56,7 @@ export const Navbar = () => {
           {user?.name}
           <EllipsisHorizontalIcon className="w-8 h-8" />
           <ul className="absolute right-full top-0 bg-slate-700 rounded-lg hidden group-hover/dots:block transition-all">
-            <li className="p-3" onClick={handleOnLogout}>
+            <li className="p-3" onClick={onLogout}>
                 Logout
             </li>
           </ul>

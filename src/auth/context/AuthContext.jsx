@@ -30,8 +30,16 @@ export const AuthContextProvider = ({ children }) => {
     dispatch({ type: types.login, payload: user });
   };
 
+  //funcion de ayuda para cerrar sesion
+  const logout = () => {
+    // remover del local storage
+    window.localStorage.removeItem('user')
+    // hacer el dispatch al reducer
+    dispatch({type: types.logout})
+  }
+
   return (
-    <AuthContext.Provider value={{ ...authState, handleLogin: login }}>
+    <AuthContext.Provider value={{ ...authState, handleLogin: login, handleLogout: logout }}>
       {children}
     </AuthContext.Provider>
   );
