@@ -10,6 +10,9 @@ export default {
         'two-auto': 'auto 1fr',
         'template-auto': 'repeat(auto-fit, minmax(350px, 1fr))'
       },
+      scale: {
+        '1005': '1.02'
+      }
     },
   },
   plugins: [],

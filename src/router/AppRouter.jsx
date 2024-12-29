@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { LoginPage } from "../auth/LoginPage";
+import { LoginPage } from "../auth/pages/LoginPage";
 import { HeroesRoutes } from "../heroes/routes/HeroesRoutes";
 
 // router general de la app
