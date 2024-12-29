@@ -7,7 +7,6 @@ export const Navbar = () => {
 
   // accediendo al contexto para obtener el nombre
   const { user } = useContext(AuthContext)
-  console.log(user)
 
   // custom hook de react router para manejar la navegacion
   const navigate = useNavigate();
