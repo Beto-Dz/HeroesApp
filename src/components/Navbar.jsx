@@ -1,7 +1,13 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { EllipsisHorizontalIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { useContext } from "react";
+import { AuthContext } from "../auth/context/AuthContext";
 
 export const Navbar = () => {
+
+  // accediendo al contexto para obtener el nombre
+  const { user } = useContext(AuthContext)
+  console.log(user)
 
   // custom hook de react router para manejar la navegacion
   const navigate = useNavigate();
@@ -46,7 +52,8 @@ export const Navbar = () => {
           </ul>
         </button>
 
-        <button className="relative group/dots p-2">
+        <button className="relative group/dots p-2 flex gap-2 items-center">
+          {user?.name}
           <EllipsisHorizontalIcon className="w-8 h-8" />
           <ul className="absolute right-full top-0 bg-slate-700 rounded-lg hidden group-hover/dots:block transition-all">
             <li className="p-3" onClick={handleOnLogout}>

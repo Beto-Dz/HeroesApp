@@ -14,8 +14,8 @@ export const HeroList = ({ publisher = "" }) => {
     <ul className="grid grid-cols-template-auto gap-2">
         {
             heroes.map(hero => (
-              <li>
-                <HeroCard key={hero.id} {...hero} />
+              <li key={hero.id}>
+                <HeroCard {...hero} />
               </li>
             ))
         }
