@@ -12,10 +12,13 @@ export const LoginPage = () => {
   // funcion de ayuda para manejar el inicio de sesion
   const handleOnLogin = () => {
 
+    // recuperando el ultimo path para reenviarlo ahí una vez inicia sesión
+    const lastpath = window.localStorage.getItem('lastpath') || '/marvel';
+
     handleLogin({id: 1, name: 'Humberto De La Cruz'})
 
     // indicamos primero la ruta y si se reemplazará el historial
-    navigate('/marvel', {
+    navigate(lastpath, {
       replace: true
     })
   }
