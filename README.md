@@ -1,8 +1,31 @@
-# React + Vite
+# Heroes App 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación de heroes Marvel y DC desarrollada en React JS con Tailwind CSS, en esta app aprendí a utilizar algunos de los custom hooks de la librería de React Router DOM.
 
-Currently, two official plugins are available:
+Características
+- Simulación de login desde frontend (aún no tiene una comunicación con backend)
+- Uso de Context API y Reducer para el información de login
+- Uso de rutas publicas y privadas
+- Recuerda la ultima ruta a la que se accedió antes de cerrar sesión
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Resultados:
+
+Login
+![imagen](./public/assets/results/image00.png)
+
+Inicio / Home
+![imagen](./public/assets/results/image01.png)
+
+Marvel
+![imagen](./public/assets/results/image02.png)
+
+DC
+![imagen](./public/assets/results/image03.png)
+
+Ver más detalles de un heroe
+![imagen](./public/assets/results/image04.png)
+
+Buscar heroe
+![imagen](./public/assets/results/image05.png)
+![imagen](./public/assets/results/image06.png)
+
