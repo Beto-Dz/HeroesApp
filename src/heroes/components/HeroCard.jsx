@@ -5,7 +5,7 @@ export const HeroCard = ({ id, superhero, publisher, alter_ego, first_appearance
   const image = `/assets/images/${id}.jpg`;
 
   return (
-    <article className="grid grid-cols-two-auto rounded-lg overflow-hidden gap-2 shadow-slate-300 shadow-sm transition-transform">
+    <article className="grid grid-cols-two-auto rounded-lg overflow-hidden gap-2 shadow-slate-300 shadow-sm hover:scale-1005 transition-transform">
       <header className="bg-slate-700 w-32 rounded-r-lg overflow-hidden">
         <figure>
           <img src={image} alt={`imagen del superheroe ${superhero}`} className="object-cover" />

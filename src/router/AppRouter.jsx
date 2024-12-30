@@ -1,15 +1,33 @@
 import { Routes, Route } from "react-router-dom";
-import { LoginPage } from "../auth/LoginPage";
+import { LoginPage } from "../auth/pages/LoginPage";
 import { HeroesRoutes } from "../heroes/routes/HeroesRoutes";
+import { PrivateRoute } from "./PrivateRoute";
+import { PublicRoute } from "./PublicRoute";
 
 // router general de la app
 export const AppRouter = () => {
   return (
     <>
       <Routes>
-        <Route path="login" element={<LoginPage />} />
+        <Route
+          path="login"
+          element={
+            <PublicRoute>
+              <LoginPage />
+            </PublicRoute>
+          }
+        />
         {/* si tuviera mas rutas como register o recover password irian aqui */}
-        <Route path="/*" element={<HeroesRoutes />} />
+        {/* <Route path="/*" element={<HeroesRoutes />} /> */}
+        {/* ahora le decimos que todo el router de heroes son privadas */}
+        <Route
+          path="/*"
+          element={
+            <PrivateRoute>
+              <HeroesRoutes />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </>
   );
