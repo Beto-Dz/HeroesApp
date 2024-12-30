@@ -29,3 +29,5 @@ Buscar heroe
 ![imagen](./public/assets/results/image05.png)
 ![imagen](./public/assets/results/image06.png)
 
+>[!IMPORTANT]
+>El despligue con github pages tiene errores por cuestiones de rutas propias de github
