@@ -34,8 +34,8 @@ export const HeroPage = () => {
   const charactersSeparated = characters.split(",");
 
   return (
-    <section>
-      <button onClick={handleBackNavigate} className="p-2 bg-blue-500 rounded-lg font-semibold flex gap-2"><ArrowUturnLeftIcon className="w-5 h-5" /> Regresar</button>
+    <section className="flex flex-col gap-2">
+      <button onClick={handleBackNavigate} className="w-fit p-2 bg-slate-800 text-white rounded-lg font-semibold flex gap-2 items-center"><ArrowUturnLeftIcon className="w-5 h-5" /> Regresar</button>
        <article className="grid grid-cols-two-auto rounded-lg overflow-hidden gap-2 shadow-slate-300 shadow-sm transition-transform">
             <header className="bg-slate-700 w-32 rounded-r-lg overflow-hidden">
               <figure>

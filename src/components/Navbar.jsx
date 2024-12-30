@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <header className="w-full bg-slate-800 sticky top-0">
       <nav className="container mx-auto p-2 text-white flex justify-between items-center text-center font-bold">
-        <Link to="/">Asociaciones</Link>
+        <Link to="/companies">Compañías</Link>
 
         <button className="group/heroes relative p-1">
           <span className="flex gap-2 items-center">Heroes <ChevronDownIcon className="h-4 w-4 group-hover/heroes:rotate-180"/> </span>
